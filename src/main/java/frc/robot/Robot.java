@@ -23,6 +23,8 @@ import frc.robot.simulation.SparkMaxWrapper;
  * arcade steering.
  */
 public class Robot extends TimedRobot {
+
+  public static double kSpeedModifier = .8;
   //private final PWMSparkMax m_leftMotor = new PWMSparkMax(0);
   //private final PWMSparkMax m_rightMotor = new PWMSparkMax(1);
   //private final CANSparkMax m_leftMotor= new CANSparkMax(1, MotorType.kBrushed);
@@ -59,6 +61,6 @@ public class Robot extends TimedRobot {
     // Drive with arcade drive.
     // That means that the Y axis drives forward
     // and backward, and the X turns left and right.
-    m_robotDrive.arcadeDrive(m_controller.getLeftY(), m_controller.getLeftX());
+    m_robotDrive.arcadeDrive(m_controller.getLeftY() * kSpeedModifier, m_controller.getLeftX() * kSpeedModifier);
   }
 }
