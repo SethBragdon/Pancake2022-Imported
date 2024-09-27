@@ -56,6 +56,15 @@ public class Robot extends TimedRobot {
     SendableRegistry.add(m_robotDrive, "drive");
     SendableRegistry.add(m_left, "left");
     SendableRegistry.add(m_right, "right");
+
+    try {
+      // Create a RobotContainer which will configure button bindings on startup.
+      RobotContainer m_Container = new RobotContainer();
+
+    } catch (Exception e) {
+      // If the robot container throws an error, send a custom error message.
+      throw new RuntimeException("Could not start robot container.");
+    }
    }
 
 
